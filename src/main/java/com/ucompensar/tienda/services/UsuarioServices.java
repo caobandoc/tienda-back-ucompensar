@@ -20,8 +20,8 @@ public class UsuarioServices {
         return usuarioDao.findAll();
     }
 
-    public Usuario getById(Long id) {
-        return usuarioDao.findById(id).orElse(new Usuario());
+    public Optional<Usuario> getById(Long id) {
+        return usuarioDao.findById(id);
     }
 
     public Usuario create(Usuario usuario) {
@@ -33,7 +33,7 @@ public class UsuarioServices {
     }
 
     public Usuario update(Long id, Usuario usuario) {
-        Usuario usuarioUpdate = getById(id);
+        Usuario usuarioUpdate = getById(id).orElse(null);
         if (usuarioUpdate == null) {
             throw new UserNotFoundException("Usuario no encontrado");
         }
@@ -45,7 +45,7 @@ public class UsuarioServices {
     }
 
     public void delete(Long id) {
-        Usuario usuario = getById(id);
+        Usuario usuario = getById(id).orElse(null);
         if (usuario == null) {
             throw new UserNotFoundException("Usuario no encontrado");
         }
