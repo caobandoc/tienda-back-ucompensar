@@ -1,4 +1,4 @@
-package com.ucompensar.tienda.dto;
+package com.ucompensar.tienda.services.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

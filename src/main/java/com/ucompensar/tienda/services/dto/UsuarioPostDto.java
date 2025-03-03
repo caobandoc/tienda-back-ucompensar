@@ -1,4 +1,4 @@
-package com.ucompensar.tienda.dto;
+package com.ucompensar.tienda.services.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

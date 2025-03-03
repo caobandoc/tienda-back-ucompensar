@@ -1,8 +1,8 @@
 package com.ucompensar.tienda.controller;
 
-import com.ucompensar.tienda.dto.UsuarioDto;
-import com.ucompensar.tienda.dto.UsuarioPostDto;
-import com.ucompensar.tienda.exception.PersonalException;
+import com.ucompensar.tienda.services.dto.UsuarioDto;
+import com.ucompensar.tienda.services.dto.UsuarioPostDto;
+import com.ucompensar.tienda.controller.exception.PersonalException;
 import com.ucompensar.tienda.services.UsuarioServices;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

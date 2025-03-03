@@ -1,10 +1,10 @@
 package com.ucompensar.tienda.services;
 
-import com.ucompensar.tienda.dto.UsuarioDto;
-import com.ucompensar.tienda.dto.UsuarioPostDto;
-import com.ucompensar.tienda.dto.mapper.UsuarioMapper;
-import com.ucompensar.tienda.exception.UserNotFoundException;
-import com.ucompensar.tienda.exception.UsernameAlreadyExistsException;
+import com.ucompensar.tienda.services.dto.UsuarioDto;
+import com.ucompensar.tienda.services.dto.UsuarioPostDto;
+import com.ucompensar.tienda.persistence.mapper.UsuarioMapper;
+import com.ucompensar.tienda.controller.exception.UserNotFoundException;
+import com.ucompensar.tienda.controller.exception.UsernameAlreadyExistsException;
 import com.ucompensar.tienda.persistence.entities.Usuario;
 import com.ucompensar.tienda.persistence.repository.UsuarioDao;
 import lombok.RequiredArgsConstructor;

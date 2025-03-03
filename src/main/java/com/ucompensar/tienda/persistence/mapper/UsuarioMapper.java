@@ -1,7 +1,7 @@
-package com.ucompensar.tienda.dto.mapper;
+package com.ucompensar.tienda.persistence.mapper;
 
-import com.ucompensar.tienda.dto.UsuarioDto;
-import com.ucompensar.tienda.dto.UsuarioPostDto;
+import com.ucompensar.tienda.services.dto.UsuarioDto;
+import com.ucompensar.tienda.services.dto.UsuarioPostDto;
 import com.ucompensar.tienda.persistence.entities.Usuario;
 import org.springframework.stereotype.Component;
 

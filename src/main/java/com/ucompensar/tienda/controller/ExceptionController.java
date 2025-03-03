@@ -1,8 +1,8 @@
 package com.ucompensar.tienda.controller;
 
-import com.ucompensar.tienda.exception.PersonalException;
-import com.ucompensar.tienda.exception.UserNotFoundException;
-import com.ucompensar.tienda.exception.UsernameAlreadyExistsException;
+import com.ucompensar.tienda.controller.exception.PersonalException;
+import com.ucompensar.tienda.controller.exception.UserNotFoundException;
+import com.ucompensar.tienda.controller.exception.UsernameAlreadyExistsException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
