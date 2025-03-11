@@ -1,8 +1,8 @@
 package com.ucompensar.tienda.services;
 
+import com.ucompensar.tienda.controller.exception.LoginException;
 import com.ucompensar.tienda.dto.LoginDto;
 import com.ucompensar.tienda.dto.LoginResponseDto;
-import com.ucompensar.tienda.exception.LoginException;
 import com.ucompensar.tienda.persistence.entities.Usuario;
 import com.ucompensar.tienda.persistence.repository.UsuarioDao;
 import lombok.RequiredArgsConstructor;
