@@ -2,7 +2,6 @@ package com.ucompensar.tienda;
 
 import com.ucompensar.tienda.persistence.entities.Usuario;
 import com.ucompensar.tienda.persistence.repository.UsuarioDao;
-import com.ucompensar.tienda.services.UsuarioServices;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,7 +20,7 @@ public class TiendaApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		Optional<Usuario> usuario = usuarioDao.findByUsername("admin");
 		if (usuario.isEmpty()) {
 			Usuario admin = Usuario.builder()

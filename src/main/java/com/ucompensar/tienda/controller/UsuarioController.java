@@ -1,14 +1,13 @@
 package com.ucompensar.tienda.controller;
 
-import com.ucompensar.tienda.dto.UsuarioPostDto;
 import com.ucompensar.tienda.dto.UsuarioDto;
+import com.ucompensar.tienda.dto.UsuarioPostDto;
 import com.ucompensar.tienda.dto.mapper.UsuarioMapper;
 import com.ucompensar.tienda.exception.PersonalException;
 import com.ucompensar.tienda.persistence.entities.Usuario;
 import com.ucompensar.tienda.services.UsuarioServices;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
