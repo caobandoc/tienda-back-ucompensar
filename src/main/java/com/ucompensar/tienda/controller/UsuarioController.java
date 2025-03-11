@@ -28,19 +28,18 @@ import java.util.List;
 public class UsuarioController {
 
     private final UsuarioServices usuarioServices;
-    private final UsuarioMapper usuarioMapper;
 
     // GET todos los usuarios
     @GetMapping
     public ResponseEntity<List<UsuarioDto>> getUsuarios() {
-        List<UsuarioDto> response = usuarioMapper.toUsuariosDto(usuarioServices.getAll());
+        List<UsuarioDto> response = usuarioServices.getAll();
         return ResponseEntity.ok(response);
     }
 
     // GET usuario por id
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioDto> getUsuario(@PathVariable("id") Long id) {
-        UsuarioDto response = usuarioMapper.toUsuarioDto(usuarioServices.getById(id));
+        UsuarioDto response = usuarioServices.getDtoById(id);
         return ResponseEntity.ok(response);
 
     }
@@ -48,16 +47,14 @@ public class UsuarioController {
     // POST crear usuario
     @PostMapping
     public ResponseEntity<UsuarioDto> createUsuario(@Valid @RequestBody UsuarioPostDto usuario) {
-        Usuario usuarioEntity = usuarioMapper.toUsuario(usuario);
-        UsuarioDto response = usuarioMapper.toUsuarioDto(usuarioServices.create(usuarioEntity));
+        UsuarioDto response = usuarioServices.create(usuario);
         return ResponseEntity.ok(response);
     }
 
     // PUT actualizar usuario
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioDto> updateUsuario(@PathVariable("id") Long id, @Valid @RequestBody UsuarioDto usuario) {
-        Usuario usuarioEntity = usuarioMapper.toUsuario(usuario);
-        UsuarioDto response = usuarioMapper.toUsuarioDto(usuarioServices.update(id, usuarioEntity));
+        UsuarioDto response =usuarioServices.update(id, usuario);
         return ResponseEntity.ok(response);
     }
 
