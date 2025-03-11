@@ -1,5 +1,6 @@
 package com.ucompensar.tienda.controller;
 
+import com.ucompensar.tienda.exception.LoginException;
 import com.ucompensar.tienda.exception.PersonalException;
 import com.ucompensar.tienda.exception.UserNotFoundException;
 import com.ucompensar.tienda.exception.UsernameAlreadyExistsException;
@@ -33,5 +34,10 @@ public class ExceptionController {
     @ExceptionHandler(UsernameAlreadyExistsException.class)
     public ProblemDetail handleUsernameAlreadyExistsException(Exception ex, HttpServletRequest request) {
         return ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(400), ex.getMessage());
+    }
+
+    @ExceptionHandler(LoginException.class)
+    public ProblemDetail handleLoginException(Exception ex, HttpServletRequest request) {
+        return ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(401), ex.getMessage());
     }
 }
