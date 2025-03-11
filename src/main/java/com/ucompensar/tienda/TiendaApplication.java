@@ -21,6 +21,7 @@ public class TiendaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
+		// Crear usuario admin si no existe
 		Optional<Usuario> usuario = usuarioDao.findByUsername("admin");
 		if (usuario.isEmpty()) {
 			Usuario admin = Usuario.builder()
