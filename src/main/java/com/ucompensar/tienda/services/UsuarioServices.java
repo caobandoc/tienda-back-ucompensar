@@ -3,7 +3,7 @@ package com.ucompensar.tienda.services;
 import com.ucompensar.tienda.services.dto.UsuarioDto;
 import com.ucompensar.tienda.services.dto.UsuarioPostDto;
 import com.ucompensar.tienda.persistence.mapper.UsuarioMapper;
-import com.ucompensar.tienda.controller.exception.UserNotFoundException;
+import com.ucompensar.tienda.controller.exception.NotFoundException;
 import com.ucompensar.tienda.controller.exception.UsernameAlreadyExistsException;
 import com.ucompensar.tienda.persistence.entities.Usuario;
 import com.ucompensar.tienda.persistence.repository.UsuarioDao;
@@ -44,7 +44,7 @@ public class UsuarioServices {
     public UsuarioDto update(Long id, UsuarioDto usuario) {
         Usuario usuarioUpdate = getById(id).orElse(null);
         if (usuarioUpdate == null) {
-            throw new UserNotFoundException("Usuario no encontrado");
+            throw new NotFoundException("Usuario no encontrado");
         }
         usuarioUpdate.setName(usuario.getName());
         usuarioUpdate.setLastname(usuario.getLastname());
@@ -56,7 +56,7 @@ public class UsuarioServices {
     public void delete(Long id) {
         Usuario usuario = getById(id).orElse(null);
         if (usuario == null) {
-            throw new UserNotFoundException("Usuario no encontrado");
+            throw new NotFoundException("Usuario no encontrado");
         }
         usuarioDao.delete(usuario);
     }
