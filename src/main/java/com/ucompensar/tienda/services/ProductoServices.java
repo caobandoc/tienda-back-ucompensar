@@ -35,7 +35,7 @@ public class ProductoServices {
     public ProductoDto create(ProductoPostDto producto) {
         Optional<Producto> productoExist = productoDao.findByName(producto.getName());
         if (productoExist.isPresent()) {
-            throw new UsernameAlreadyExistsException("El username ya existe");
+            throw new UsernameAlreadyExistsException("El producto ya existe");
         }
         Producto productoEntity = productoMapper.toProducto(producto);
         return productoMapper.toProductoDto(productoDao.save(productoEntity));
