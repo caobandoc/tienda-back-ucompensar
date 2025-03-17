@@ -25,6 +25,6 @@ public class ProductoDto {
     private String imageUrl;
     private Integer quantity;
 
-    private Categoria categoria;
-    private Marca marca;
+    private Categoria category;
+    private Marca brand;
 }

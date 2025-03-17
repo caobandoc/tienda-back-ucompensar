@@ -1,6 +1,6 @@
 package com.ucompensar.tienda.services;
 
-import com.ucompensar.tienda.controller.exception.UserNotFoundException;
+import com.ucompensar.tienda.controller.exception.NotFoundException;
 import com.ucompensar.tienda.controller.exception.UsernameAlreadyExistsException;
 import com.ucompensar.tienda.persistence.entities.Producto;
 import com.ucompensar.tienda.persistence.mapper.ProductoMapper;
@@ -35,7 +35,7 @@ public class ProductoServices {
     public ProductoDto create(ProductoPostDto producto) {
         Optional<Producto> productoExist = productoDao.findByName(producto.getName());
         if (productoExist.isPresent()) {
-            throw new UsernameAlreadyExistsException("El username ya existe");
+            throw new UsernameAlreadyExistsException("El producto ya existe");
         }
         Producto productoEntity = productoMapper.toProducto(producto);
         return productoMapper.toProductoDto(productoDao.save(productoEntity));
@@ -44,7 +44,7 @@ public class ProductoServices {
     public ProductoDto update(Long id, ProductoDto producto) {
         Producto productoUpdate = getById(id).orElse(null);
         if (productoUpdate == null) {
-            throw new UserNotFoundException("producto no encontrado");
+            throw new NotFoundException("producto no encontrado");
         }
         productoUpdate.setName(producto.getName());
         productoUpdate.setName(producto.getName());
@@ -56,7 +56,7 @@ public class ProductoServices {
     public void delete(Long id) {
         Producto producto = getById(id).orElse(null);
         if (producto == null) {
-            throw new UserNotFoundException("Producto no encontrado");
+            throw new NotFoundException("Producto no encontrado");
         }
         productoDao.delete(producto);
     }

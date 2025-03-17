@@ -4,33 +4,26 @@ import com.ucompensar.tienda.services.ProductoServices;
 import com.ucompensar.tienda.services.dto.ProductoDto;
 import com.ucompensar.tienda.services.dto.ProductoPostDto;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/productos")
-//@RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
+@RequiredArgsConstructor
 public class ProductoController {
-    // Forma 1
-    // Inyectar el servicio de productos, pero es una mala forma de inyectar dependencias
-    // @Autowired
-    // private ProductoServices productoServices;
-
-    // Forma 2
-    // Inyectar el servicio de productos a través del constructor
     private final ProductoServices productoServices;
-
-    @Autowired
-    public ProductoController(ProductoServices productoServices) {
-        this.productoServices = productoServices;
-    }
-
-    // Forma 3
-    // Inyectar el servicio con final y la anotacion de lombok @RequiredArgsConstructor
-    // private final ProductoServices productoServices;
 
     // GET todos los productos
     @GetMapping

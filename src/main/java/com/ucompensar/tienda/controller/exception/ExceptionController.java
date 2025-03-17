@@ -1,9 +1,5 @@
-package com.ucompensar.tienda.controller;
+package com.ucompensar.tienda.controller.exception;
 
-import com.ucompensar.tienda.controller.exception.PersonalException;
-import com.ucompensar.tienda.controller.exception.UserNotFoundException;
-import com.ucompensar.tienda.controller.exception.UsernameAlreadyExistsException;
-import com.ucompensar.tienda.controller.exception.LoginException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
@@ -26,7 +22,7 @@ public class ExceptionController {
         return response;
     }
 
-    @ExceptionHandler(UserNotFoundException.class)
+    @ExceptionHandler(NotFoundException.class)
     public ProblemDetail handleUserNotFoundException(Exception ex, HttpServletRequest request) {
         return ProblemDetail.forStatusAndDetail(HttpStatusCode.valueOf(404), ex.getMessage());
     }

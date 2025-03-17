@@ -19,8 +19,8 @@ public class ProductoMapper {
                 .description(value.getDescription())
                 .imageUrl(value.getImageUrl())
                 .quantity(value.getQuantity())
-                .categoria(value.getCategoria())
-                .marca(value.getMarca())
+                .category(value.getCategoria())
+                .brand(value.getMarca())
                 .build()).orElse(null);
     }
 
@@ -32,8 +32,8 @@ public class ProductoMapper {
                 .description(producto.getDescription())
                 .imageUrl(producto.getImageUrl())
                 .quantity(producto.getQuantity())
-                .categoria(producto.getCategoria())
-                .marca(producto.getMarca())
+                .category(producto.getCategoria())
+                .brand(producto.getMarca())
                 .build();
     }
 
@@ -44,8 +44,8 @@ public class ProductoMapper {
                 .description(producto.getDescription())
                 .imageUrl(producto.getImageUrl())
                 .quantity(producto.getQuantity())
-                .categoria(producto.getCategoria())
-                .marca(producto.getMarca())
+                .categoria(producto.getCategory())
+                .marca(producto.getBrand())
                 .build();
     }
 
@@ -56,12 +56,12 @@ public class ProductoMapper {
                 .description(producto.getDescription())
                 .imageUrl(producto.getImageUrl())
                 .quantity(producto.getQuantity())
-                .categoria(producto.getCategoria())
-                .marca(producto.getMarca())
+                .categoria(producto.getCategory())
+                .marca(producto.getBrand())
                 .build();
     }
 
     public List<ProductoDto> toProductosDto(List<Producto> all) {
-        return all.stream().map(this::toProductoDto).collect(Collectors.toList());
+        return all.stream().map(this::toProductoDto).toList();
     }
 }
