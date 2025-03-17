@@ -68,8 +68,8 @@ public class ProductoController {
         return ResponseEntity.ok().build();
     }
 
-   // @GetMapping("/exception")
-    //public ResponseEntity<Void> exception() {
-      //  throw new PersonalException("Probando excepciones");
-    //}
+   /*  @GetMapping("/exception")
+    public ResponseEntity<Void> exception() {
+      throw new PersonalException("Probando excepciones");
+    }*/
 }
